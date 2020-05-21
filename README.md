@@ -30,8 +30,8 @@ spotify-backup-playlist.py
 
 The `python spotify-backup.py` command will also output a playlist `id`. Pass this `id` value as an argument for `spotify-backup-playlist.py`, like so:
 
-	python spotify-backup-playlist {id}
+	python spotify-backup-playlist {playlist_id}
 
-Where `{id}` is the `id` of the playlist you'd like to back up (returned in the `python spotify-backup.py` command).
+Where `{playlist_id}` is the `id` of the playlist you'd like to back up (returned in the `python spotify-backup.py` command).
 
 Happy backups.
