@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import argparse 
+import argparse
 import codecs
 import http.client
 import http.server
@@ -143,7 +143,7 @@ def main():
 	# List all playlists and all track in each playlist.
 	playlists = spotify.list('users/{user_id}/playlists'.format(user_id=me['id']), {'limit': 50})
 	for playlist in playlists:
-		log('Loading playlist: {name} ({tracks[total]} songs)'.format(**playlist))
+		log('Loading playlist: {id} - {name} ({tracks[total]} songs)'.format(**playlist))
 		playlist['tracks'] = spotify.list(playlist['tracks']['href'], {'limit': 100})
 	
 	# Write the file.
@@ -155,7 +155,7 @@ def main():
 		# Tab-separated file.
 		elif args.format == 'txt':
 			for playlist in playlists:
-				f.write(playlist['name'] + '\r\n')
+				f.write(playlist['id'] + ' - ' + playlist['name'] + '\r\n')
 				for track in playlist['tracks']:
 					f.write('{name}\t{artists}\t{album}\t{uri}\r\n'.format(
 						uri=track['track']['uri'],
