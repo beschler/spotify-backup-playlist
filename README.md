@@ -13,7 +13,7 @@ If not, [update](https://formulae.brew.sh/formula/python#default) `python` with 
 
 Run the script from the command line to get all playlists:
 
-  python spotify-backup.py playlists.txt
+	python spotify-backup.py playlists.txt
 
 Adding `--format=json` will give you a JSON dump with everything that the script gets from the Spotify API. If for some reason the browser-based authorization flow doesn't work, you can also [generate an OAuth token](https://developer.spotify.com/web-api/console/get-playlists/) on the developer site (with the `playlist-read-private` permission) and pass it with the `--token` option.
 
