@@ -25,12 +25,12 @@ Adding `--format=json` will give you a JSON dump with everything that the script
 
 Collaborative playlists and playlist folders don't show up in the API.
 
-spotify-backup-playlists.py
+spotify-backup-playlist.py
 ---------------------------
 
-The `python spotify-backup.py` command will also output a playlist `id`. Pass this `id` value as an argument for `spotify-backup-playlists.py`, like so:
+The `python spotify-backup.py` command will also output a playlist `id`. Pass this `id` value as an argument for `spotify-backup-playlist.py`, like so:
 
-	python spotify-backup-playlists {id}
+	python spotify-backup-playlist {id}
 
 Where `{id}` is the `id` of the playlist you'd like to back up (returned in the `python spotify-backup.py` command).
 
