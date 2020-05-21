@@ -141,34 +141,10 @@ def main():
 	me = spotify.get('me')
 	log('Logged in as {display_name} ({id})'.format(**me))
 
-	# List all playlists and all track in each playlist.
-	# playlists = spotify.list('users/{user_id}/playlists'.format(user_id=me['id']), {'limit': 50})
-	# for playlist in playlists:
-	# 	log('Loading playlist: {id} - {name} ({tracks[total]} songs)'.format(**playlist))
-	# 	playlist['tracks'] = spotify.list(playlist['tracks']['href'], {'limit': 100})
-	
 	# Get playlist by ID.
-	# playlist = spotify.list('playlists/{playlist_id}'.format(playlist_id=args.playlist), {'limit': 1})
 	playlist = spotify.get('playlists/{playlist_id}'.format(playlist_id=args.playlist))
 	log('Loading playlist: {id} - {name} ({tracks[total]} songs)'.format(**playlist))
 	playlist['all_items'] = spotify.list(playlist['tracks']['href'], {'limit': 9999})
-	
-	# for item in playlist['all_items']:
-	# 	spotify_track_url = ''
-	# 	if 'external_urls' in item['track']:
-	# 		if 'spotify' in item['track']['external_urls']:
-	# 			spotify_track_url = item['track']['external_urls']['spotify']
-	# 			log( "item['track']['external_urls']['spotify'] found!" )
-	# 	log( spotify_track_url )
-	# 	log('{id}\t{name}\t{artists}\t{album}\t{added_at}\t{uri}\t{url}\r\n'.format(
-	# 		name=item['track']['name'],
-	# 		id=item['track']['id'],
-	# 		artists=', '.join([artist['name'] for artist in item['track']['artists']]),
-	# 		album=item['track']['album']['name'],
-	# 		added_at=item['added_at'],
-	# 		uri=item['track']['uri'],
-	# 		url=item['track']['external_urls']['spotify']
-	# 	))
 	
 	output_filename = args.playlist + ' - ' + playlist['name'] + '.txt'
 	
@@ -180,7 +156,6 @@ def main():
 	
 		# Tab-separated file.
 		elif args.format == 'txt':
-			# f.write(playlist['id'] + ' - ' + playlist['name'] + '\r\n')
 			f.write('id\tname\tartists\talbum\tadded_at\turi\turl\r\n')
 			for item in playlist['all_items']:
 				spotify_track_url = ''
