@@ -42,13 +42,15 @@ Pass this `id` value as an argument for `spotify-backup-playlist.py`, like so:
 
 	python spotify-backup-playlist {playlist_id}
 
-Where `{playlist_id}` is the `id` of the playlist you'd like to back up (returned in the `python spotify-backup.py` command). This will output to a file as such:
+Where `{playlist_id}` is the `id` of the playlist you'd like to back up.
+
+This will output to a file as such:
 
 	{playlist_id} - {playlist_name}.txt
 
 Where `{playlist_id}` is the `id` and `{playlist_name}` is the name of the playlist.
 
-Fields exported are as follows:
+Fields exported for each track are as follows:
 
 + `id`: track ID
 + `name`: track name
