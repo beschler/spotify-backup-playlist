@@ -40,7 +40,7 @@ Wherein the value after `spotify:playlist:` is the playlist `id`.
 
 Pass this `id` value as an argument for `spotify-backup-playlist.py`, like so:
 
-	python spotify-backup-playlist {playlist_id}
+	python spotify-backup-playlist.py {playlist_id}
 
 Where `{playlist_id}` is the `id` of the playlist you'd like to back up.
 
